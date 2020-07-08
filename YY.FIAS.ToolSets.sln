@@ -5,9 +5,15 @@ VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YY.FIAS.Loader", "YY.FIAS.Loader\YY.FIAS.Loader.csproj", "{30B089B4-C322-4461-9C70-DDA92BA95469}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YY.FIAS.Exporter", "YY.FIAS.Exporter\YY.FIAS.Exporter.csproj", "{22D894A4-E27C-4ADE-BAA0-8C6D4E5FB9AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YY.FIAS.Exporter", "YY.FIAS.Exporter\YY.FIAS.Exporter.csproj", "{22D894A4-E27C-4ADE-BAA0-8C6D4E5FB9AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YY.FIAS.Service", "YY.FIAS.Service\YY.FIAS.Service.csproj", "{1066442D-7DF2-4976-9E3F-CAE605A424D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YY.FIAS.Service", "YY.FIAS.Service\YY.FIAS.Service.csproj", "{1066442D-7DF2-4976-9E3F-CAE605A424D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{663C74EA-9ED2-4694-B71B-8FF291784F42}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
