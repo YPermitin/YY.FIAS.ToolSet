@@ -4,11 +4,13 @@
 
 ## Состояние сборки
 
-CI / CD еще в работе...
+| Windows |  Linux |
+|:-------:|:------:|
+| [![Build status](https://ci.appveyor.com/api/projects/status/psgnk6vwjfdraj7l?svg=true)](https://ci.appveyor.com/project/YPermitin/yy-fias-toolset)  | [![Build Status](https://travis-ci.org/YPermitin/YY.FIAS.ToolSet.svg?branch=master)](https://travis-ci.org/YPermitin/YY.FIAS.ToolSet) |
 
 ### Code Climate
 
-Еще не настроен...
+[![Maintainability](https://api.codeclimate.com/v1/badges/202f2e3847973f8b5e3b/maintainability)](https://codeclimate.com/github/YPermitin/YY.FIAS.ToolSet/maintainability)
 
 ## Состав репозитория
 
