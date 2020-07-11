@@ -14,7 +14,7 @@ namespace YY.FIAS.Loader.Tests
 
             Assert.NotNull(lastInfo);
             Assert.True(lastInfo.VersionId > 0);
-            Assert.True(lastInfo.VersiodDate > DateTime.MinValue);
+            Assert.True(lastInfo.VersionDate > DateTime.MinValue);
         }
 
         [Fact]

@@ -18,7 +18,7 @@ namespace YY.FIAS.Loader
         public int VersionId { get; set; }
         public string TextVersion { get; set; }
 
-        public DateTime VersiodDate
+        public DateTime VersionDate
         {
             get
             {
