@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\YY.FIAS.Loader\YY.FIAS.Loader.csproj" />
+  </ItemGroup>
+
 </Project>
