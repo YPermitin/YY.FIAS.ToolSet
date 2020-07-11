@@ -1,0 +1,1 @@
+dotnet test ./Tests/YY.FIAS.Loader.Tests/YY.FIAS.Loader.Tests.csproj
