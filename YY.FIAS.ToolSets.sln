@@ -28,6 +28,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YY.FIAS.ConsoleApp", "Apps\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YY.FIAS.Exporter.Tests", "Tests\YY.FIAS.Exporter.Tests\YY.FIAS.Exporter.Tests.csproj", "{1DCCFEE4-C6DA-468D-A545-D5141A95FF27}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{79D6A048-A0DE-495A-86CC-AA0BAB056C56}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\appveyor-build.ps1 = Scripts\appveyor-build.ps1
+		Scripts\appveyor-runTests.ps1 = Scripts\appveyor-runTests.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +75,7 @@ Global
 		{51B028DC-F8A2-44F2-BAC9-3470C79E7356} = {7227DE98-398D-4716-9B29-97AA4ACFD4A6}
 		{A28B3A2D-C12A-4B95-850F-5D18C7B8E7E4} = {DF17B5D0-0ACE-4594-AF8D-C46942578727}
 		{1DCCFEE4-C6DA-468D-A545-D5141A95FF27} = {7227DE98-398D-4716-9B29-97AA4ACFD4A6}
+		{79D6A048-A0DE-495A-86CC-AA0BAB056C56} = {663C74EA-9ED2-4694-B71B-8FF291784F42}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9BF0C958-A323-40E9-80B4-623828AEC523}
