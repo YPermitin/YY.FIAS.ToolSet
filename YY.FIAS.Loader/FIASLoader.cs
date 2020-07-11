@@ -8,12 +8,22 @@ namespace YY.FIAS.Loader
 {
     public class FIASLoader : IFIASLoader
     {
+        #region Private Members
+
         private readonly IAPIHelper _apiHelper;
+
+        #endregion
+
+        #region Constructor
 
         public FIASLoader()
         {
             _apiHelper = new APIHelper();
         }
+
+        #endregion
+
+        #region Public Methods
 
         public async Task<DownloadFileInfo> GetLastDownloadFileInfo()
         {
@@ -32,5 +42,7 @@ namespace YY.FIAS.Loader
 
             return allFileInfo;
         }
+
+        #endregion
     }
 }

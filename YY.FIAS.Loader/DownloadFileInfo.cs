@@ -7,7 +7,13 @@ namespace YY.FIAS.Loader
 {
     public sealed class DownloadFileInfo
     {
+        #region Private Members
+
         private readonly IAPIHelper _apiHelper;
+
+        #endregion
+
+        #region Public Members
 
         public int VersionId { get; set; }
         public string TextVersion { get; set; }
@@ -34,10 +40,16 @@ namespace YY.FIAS.Loader
         public Uri Kladr4ArjUrl { get; set; }
         public Uri Kladr47ZUrl { get; set; }
 
+        #endregion
+
+        #region Constructor
+
         internal DownloadFileInfo()
         {
             _apiHelper = new APIHelper();
         }
+
+        #endregion
 
         #region Public Methods
 
