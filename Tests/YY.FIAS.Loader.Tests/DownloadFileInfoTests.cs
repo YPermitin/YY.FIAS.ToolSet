@@ -7,9 +7,15 @@ namespace YY.FIAS.Loader.Tests
 {
     public class DownloadFileInfoTests
     {
+        #region Private Members
+
         private readonly string _workDirectory;
         private readonly IFIASLoader _loader;
         private DownloadFileInfo _fileInfo;
+
+        #endregion
+
+        #region Constructor
 
         public DownloadFileInfoTests()
         {
@@ -17,9 +23,11 @@ namespace YY.FIAS.Loader.Tests
             _workDirectory = Path.Combine(Environment.CurrentDirectory, "TestData");
         }
 
+        #endregion
+
         #region Public Methods
 
-        [Fact]
+        [Fact(Skip="Too large data file")]
         public async void SaveFiasCompleteDbfFileTest()
         {
             DownloadFileInfo lastInfo = await GetDownloadFileInfo();
@@ -27,7 +35,7 @@ namespace YY.FIAS.Loader.Tests
             string pathFiasCompleteDbfFile = Path.Combine(_workDirectory, "SaveFiasCompleteDbfFileTest.dbf");
             await lastInfo.SaveFiasCompleteDbfFileAsync(pathFiasCompleteDbfFile);
         }
-        [Fact]
+        [Fact(Skip = "Too large data file")]
         public async void SaveFiasCompleteDbfToDirectoryTest()
         {
             DownloadFileInfo lastInfo = await GetDownloadFileInfo();
@@ -36,7 +44,7 @@ namespace YY.FIAS.Loader.Tests
             await lastInfo.SaveFiasCompleteDbfToDirectoryAsync(pathFiasCompleteDbfFile);
         }
 
-        [Fact]
+        [Fact(Skip = "Too large data file")]
         public async void SaveFiasCompleteXmlFileTest()
         {
             DownloadFileInfo lastInfo = await GetDownloadFileInfo();
@@ -44,7 +52,7 @@ namespace YY.FIAS.Loader.Tests
             string pathFiasCompleteDbfFile = Path.Combine(_workDirectory, "SaveFiasCompleteXmlFileTest.dbf");
             await lastInfo.SaveFiasCompleteXmlFileAsync(pathFiasCompleteDbfFile);
         }
-        [Fact]
+        [Fact(Skip = "Too large data file")]
         public async void SaveFiasCompleteXmlToDirectoryTest()
         {
             DownloadFileInfo lastInfo = await GetDownloadFileInfo();
@@ -53,7 +61,7 @@ namespace YY.FIAS.Loader.Tests
             await lastInfo.SaveFiasCompleteXmlToDirectoryAsync(pathFiasCompleteDbfFile);
         }
 
-        [Fact]
+        [Fact(Skip = "Redudant test")]
         public async void SaveFiasDeltaDbFileTest()
         {
             DownloadFileInfo lastInfo = await GetDownloadFileInfo();
@@ -70,7 +78,7 @@ namespace YY.FIAS.Loader.Tests
             await lastInfo.SaveFiasDeltaDbToDirectoryAsync(pathFiasCompleteDbfFile);
         }
 
-        [Fact]
+        [Fact(Skip = "Redudant test")]
         public async void SaveFiasDeltaXmlFileTest()
         {
             DownloadFileInfo lastInfo = await GetDownloadFileInfo();
@@ -87,7 +95,7 @@ namespace YY.FIAS.Loader.Tests
             await lastInfo.SaveFiasDeltaXmlToDirectoryAsync(pathFiasCompleteDbfFile);
         }
 
-        [Fact]
+        [Fact(Skip = "Redudant test")]
         public async void SaveKladr4ArjFileTest()
         {
             DownloadFileInfo lastInfo = await GetDownloadFileInfo();
@@ -104,7 +112,7 @@ namespace YY.FIAS.Loader.Tests
             await lastInfo.SaveKladr4ArjToDirectoryAsync(pathFiasCompleteDbfFile);
         }
 
-        [Fact]
+        [Fact(Skip = "Redudant test")]
         public async void SaveKladr47ZFileTest()
         {
             DownloadFileInfo lastInfo = await GetDownloadFileInfo();
