@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using YY.FIAS.Loader;
@@ -31,6 +32,24 @@ namespace YY.FIAS.ConsoleApp
                 lastInfo.SaveKladr47ZToDirectoryAsync(workDirectory),
                 lastInfo.SaveKladr4ArjToDirectoryAsync(workDirectory)
             );
+
+            string workDirectoryHistory = Path.Combine(Environment.CurrentDirectory, "FiasHistoryData");
+            IFIASLoader loaderistory = new FIASLoader();
+            IReadOnlyList<DownloadFileInfo> historyInfo = await loaderistory.GetAllDownloadFileInfo();
+
+            foreach (var fileInfo in historyInfo)
+            {
+                string currentVersionPath = Path.Combine(workDirectoryHistory, fileInfo.VersionId.ToString());
+
+                await Task.WhenAll(
+                    fileInfo.SaveFiasDeltaDbToDirectoryAsync(currentVersionPath),
+                    fileInfo.SaveFiasDeltaXmlToDirectoryAsync(currentVersionPath),
+                    fileInfo.SaveFiasCompleteDbfToDirectoryAsync(currentVersionPath),
+                    fileInfo.SaveFiasCompleteXmlToDirectoryAsync(currentVersionPath),
+                    fileInfo.SaveKladr47ZToDirectoryAsync(currentVersionPath),
+                    fileInfo.SaveKladr4ArjToDirectoryAsync(currentVersionPath)
+                );
+            }
         }
     }
 }
