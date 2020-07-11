@@ -7,19 +7,24 @@ namespace YY.FIAS.Loader.API
 {
     internal class APIHelper : IAPIHelper
     {
+        #region Private Members
+
         private HttpClient _apiClient { get; set; }
+
+        #endregion
+
+        #region Constructor
 
         public APIHelper()
         {
             InitializeClient();
         }
 
-        private void InitializeClient()
-        {
-            _apiClient = new HttpClient();
-        }
+        #endregion
 
-        public async Task DownloadFile(Uri uriFile, string savePath)
+        #region Public Methods
+
+        public async Task DownloadFileAsync(Uri uriFile, string savePath)
         {
             using (HttpResponseMessage response = _apiClient.GetAsync(uriFile, HttpCompletionOption.ResponseHeadersRead).Result)
             {
@@ -51,8 +56,7 @@ namespace YY.FIAS.Loader.API
                 }
             }
         }
-
-        public async Task<string> GetContentAsString(Uri uri)
+        public async Task<string> GetContentAsStringAsync(Uri uri)
         {
             var response = await _apiClient.GetAsync(uri);
             response.EnsureSuccessStatusCode();
@@ -60,5 +64,16 @@ namespace YY.FIAS.Loader.API
             var content = await response.Content.ReadAsStringAsync();
             return content;
         }
+        
+        #endregion
+
+        #region Private Methods
+
+        private void InitializeClient()
+        {
+            _apiClient = new HttpClient();
+        }
+
+        #endregion
     }
 }

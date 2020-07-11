@@ -5,7 +5,7 @@ namespace YY.FIAS.Loader.API
 {
     internal interface IAPIHelper
     {
-        Task DownloadFile(Uri uriFile, string savePath);
-        Task<string> GetContentAsString(Uri uri);
+        Task DownloadFileAsync(Uri uriFile, string savePath);
+        Task<string> GetContentAsStringAsync(Uri uri);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Xunit;
 
@@ -12,6 +13,8 @@ namespace YY.FIAS.Loader.Tests
             DownloadFileInfo lastInfo = await loader.GetLastDownloadFileInfo();
 
             Assert.NotNull(lastInfo);
+            Assert.True(lastInfo.VersionId > 0);
+            Assert.True(lastInfo.VersiodDate > DateTime.MinValue);
         }
 
         [Fact]

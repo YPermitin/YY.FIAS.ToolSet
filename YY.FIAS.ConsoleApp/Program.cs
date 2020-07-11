@@ -24,12 +24,12 @@ namespace YY.FIAS.ConsoleApp
             DownloadFileInfo lastInfo = await loader.GetLastDownloadFileInfo();
 
             await Task.WhenAll(
-                lastInfo.SaveFiasDeltaDbToDirectory(workDirectory),
-                lastInfo.SaveFiasDeltaXmlToDirectory(workDirectory),
-                lastInfo.SaveFiasCompleteDbfToDirectory(workDirectory),
-                lastInfo.SaveFiasCompleteXmlToDirectory(workDirectory),
-                lastInfo.SaveKladr47ZToDirectory(workDirectory),
-                lastInfo.SaveKladr4ArjToDirectory(workDirectory)
+                lastInfo.SaveFiasDeltaDbToDirectoryAsync(workDirectory),
+                lastInfo.SaveFiasDeltaXmlToDirectoryAsync(workDirectory),
+                lastInfo.SaveFiasCompleteDbfToDirectoryAsync(workDirectory),
+                lastInfo.SaveFiasCompleteXmlToDirectoryAsync(workDirectory),
+                lastInfo.SaveKladr47ZToDirectoryAsync(workDirectory),
+                lastInfo.SaveKladr4ArjToDirectoryAsync(workDirectory)
             );
         }
     }

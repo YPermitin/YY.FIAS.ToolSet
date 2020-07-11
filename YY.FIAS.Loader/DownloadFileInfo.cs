@@ -11,6 +11,22 @@ namespace YY.FIAS.Loader
 
         public int VersionId { get; set; }
         public string TextVersion { get; set; }
+
+        public DateTime VersiodDate
+        {
+            get
+            {
+                DateTime versionDate = DateTime.MinValue;
+
+                if (TextVersion != null)
+                {
+                    string sourceVersionDate = TextVersion.Substring(TextVersion.Length - 10, 10);
+                    DateTime.TryParse(sourceVersionDate, out versionDate);
+                }
+                
+                return versionDate;
+            }
+        }
         public Uri FiasCompleteDbfUrl { get; set; }
         public Uri FiasCompleteXmlUrl { get; set; }
         public Uri FiasDeltaDbfUrl { get; set; }
@@ -23,7 +39,9 @@ namespace YY.FIAS.Loader
             _apiHelper = new APIHelper();
         }
 
-        public async Task SaveFiasCompleteDbfFile(string fileToSave)
+        #region Public Methods
+
+        public async Task SaveFiasCompleteDbfFileAsync(string fileToSave)
         {
             FileInfo fileToSaveInfo = new FileInfo(fileToSave);
             if (fileToSaveInfo.Directory != null)
@@ -32,15 +50,15 @@ namespace YY.FIAS.Loader
                     fileToSaveInfo.Directory.Create();
             }
 
-            await _apiHelper.DownloadFile(FiasCompleteDbfUrl, fileToSave);
+            await _apiHelper.DownloadFileAsync(FiasCompleteDbfUrl, fileToSave);
         }
-        public async Task SaveFiasCompleteDbfToDirectory(string directoryToSave)
+        public async Task SaveFiasCompleteDbfToDirectoryAsync(string directoryToSave)
         {
             string fileToSave = Path.Combine(directoryToSave, "FiasCompleteDbf.dbf");
-            await SaveFiasCompleteDbfFile(fileToSave);
+            await SaveFiasCompleteDbfFileAsync(fileToSave);
         }
 
-        public async Task SaveFiasCompleteXmlFile(string fileToSave)
+        public async Task SaveFiasCompleteXmlFileAsync(string fileToSave)
         {
             FileInfo fileToSaveInfo = new FileInfo(fileToSave);
             if (fileToSaveInfo.Directory != null)
@@ -49,15 +67,15 @@ namespace YY.FIAS.Loader
                     fileToSaveInfo.Directory.Create();
             }
 
-            await _apiHelper.DownloadFile(FiasCompleteXmlUrl, fileToSave);
+            await _apiHelper.DownloadFileAsync(FiasCompleteXmlUrl, fileToSave);
         }
-        public async Task SaveFiasCompleteXmlToDirectory(string directoryToSave)
+        public async Task SaveFiasCompleteXmlToDirectoryAsync(string directoryToSave)
         {
             string fileToSave = Path.Combine(directoryToSave, "SaveFiasCompleteXml.xml");
-            await SaveFiasCompleteXmlFile(fileToSave);
+            await SaveFiasCompleteXmlFileAsync(fileToSave);
         }
 
-        public async Task SaveFiasDeltaDbFile(string fileToSave)
+        public async Task SaveFiasDeltaDbFileAsync(string fileToSave)
         {
             FileInfo fileToSaveInfo = new FileInfo(fileToSave);
             if (fileToSaveInfo.Directory != null)
@@ -66,15 +84,15 @@ namespace YY.FIAS.Loader
                     fileToSaveInfo.Directory.Create();
             }
 
-            await _apiHelper.DownloadFile(FiasDeltaDbfUrl, fileToSave);
+            await _apiHelper.DownloadFileAsync(FiasDeltaDbfUrl, fileToSave);
         }
-        public async Task SaveFiasDeltaDbToDirectory(string directoryToSave)
+        public async Task SaveFiasDeltaDbToDirectoryAsync(string directoryToSave)
         {
             string fileToSave = Path.Combine(directoryToSave, "SaveFiasDeltaDb.dbf");
-            await SaveFiasDeltaDbFile(fileToSave);
+            await SaveFiasDeltaDbFileAsync(fileToSave);
         }
 
-        public async Task SaveFiasDeltaXmlFile(string fileToSave)
+        public async Task SaveFiasDeltaXmlFileAsync(string fileToSave)
         {
             FileInfo fileToSaveInfo = new FileInfo(fileToSave);
             if (fileToSaveInfo.Directory != null)
@@ -83,15 +101,15 @@ namespace YY.FIAS.Loader
                     fileToSaveInfo.Directory.Create();
             }
 
-            await _apiHelper.DownloadFile(FiasDeltaXmlUrl, fileToSave);
+            await _apiHelper.DownloadFileAsync(FiasDeltaXmlUrl, fileToSave);
         }
-        public async Task SaveFiasDeltaXmlToDirectory(string directoryToSave)
+        public async Task SaveFiasDeltaXmlToDirectoryAsync(string directoryToSave)
         {
             string fileToSave = Path.Combine(directoryToSave, "FiasDeltaXml.xml");
-            await SaveFiasDeltaXmlFile(fileToSave);
+            await SaveFiasDeltaXmlFileAsync(fileToSave);
         }
 
-        public async Task SaveKladr4ArjFile(string fileToSave)
+        public async Task SaveKladr4ArjFileAsync(string fileToSave)
         {
             FileInfo fileToSaveInfo = new FileInfo(fileToSave);
             if (fileToSaveInfo.Directory != null)
@@ -100,15 +118,15 @@ namespace YY.FIAS.Loader
                     fileToSaveInfo.Directory.Create();
             }
 
-            await _apiHelper.DownloadFile(Kladr4ArjUrl, fileToSave);
+            await _apiHelper.DownloadFileAsync(Kladr4ArjUrl, fileToSave);
         }
-        public async Task SaveKladr4ArjToDirectory(string directoryToSave)
+        public async Task SaveKladr4ArjToDirectoryAsync(string directoryToSave)
         {
             string fileToSave = Path.Combine(directoryToSave, "Kladr4Arj.arj");
-            await SaveKladr4ArjFile(fileToSave);
+            await SaveKladr4ArjFileAsync(fileToSave);
         }
 
-        public async Task SaveKladr47ZFile(string fileToSave)
+        public async Task SaveKladr47ZFileAsync(string fileToSave)
         {
             FileInfo fileToSaveInfo = new FileInfo(fileToSave);
             if (fileToSaveInfo.Directory != null)
@@ -117,12 +135,14 @@ namespace YY.FIAS.Loader
                     fileToSaveInfo.Directory.Create();
             }
 
-            await _apiHelper.DownloadFile(Kladr47ZUrl, fileToSave);
+            await _apiHelper.DownloadFileAsync(Kladr47ZUrl, fileToSave);
         }
-        public async Task SaveKladr47ZToDirectory(string directoryToSave)
+        public async Task SaveKladr47ZToDirectoryAsync(string directoryToSave)
         {
             string fileToSave = Path.Combine(directoryToSave, "Kladr47Z.7z");
-            await SaveKladr47ZFile(fileToSave);
+            await SaveKladr47ZFileAsync(fileToSave);
         }
+
+        #endregion
     }
 }

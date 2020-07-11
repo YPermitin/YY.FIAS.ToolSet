@@ -18,7 +18,7 @@ namespace YY.FIAS.Loader
         public async Task<DownloadFileInfo> GetLastDownloadFileInfo()
         {
             Uri methodUri = new Uri("http://fias.nalog.ru/WebServices/Public/GetLastDownloadFileInfo");
-            string contentDownloadFileInfo = await _apiHelper.GetContentAsString(methodUri);
+            string contentDownloadFileInfo = await _apiHelper.GetContentAsStringAsync(methodUri);
             DownloadFileInfo lastFileInfo = JsonConvert.DeserializeObject<DownloadFileInfo>(contentDownloadFileInfo);
 
             return lastFileInfo;
@@ -27,7 +27,7 @@ namespace YY.FIAS.Loader
         public async Task<IReadOnlyList<DownloadFileInfo>> GetAllDownloadFileInfo()
         {
             Uri methodUri = new Uri("http://fias.nalog.ru/WebServices/Public/GetAllDownloadFileInfo");
-            string contentAllDownloadFileInfo = await _apiHelper.GetContentAsString(methodUri);
+            string contentAllDownloadFileInfo = await _apiHelper.GetContentAsStringAsync(methodUri);
             List<DownloadFileInfo> allFileInfo = JsonConvert.DeserializeObject<List<DownloadFileInfo>>(contentAllDownloadFileInfo);
 
             return allFileInfo;
