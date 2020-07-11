@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YY.FIAS.Loader", "YY.FIAS.Loader\YY.FIAS.Loader.csproj", "{30B089B4-C322-4461-9C70-DDA92BA95469}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YY.FIAS.Loader", "Libs\YY.FIAS.Loader\YY.FIAS.Loader.csproj", "{30B089B4-C322-4461-9C70-DDA92BA95469}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YY.FIAS.Exporter", "YY.FIAS.Exporter\YY.FIAS.Exporter.csproj", "{22D894A4-E27C-4ADE-BAA0-8C6D4E5FB9AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YY.FIAS.Exporter", "Libs\YY.FIAS.Exporter\YY.FIAS.Exporter.csproj", "{22D894A4-E27C-4ADE-BAA0-8C6D4E5FB9AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YY.FIAS.Service", "YY.FIAS.Service\YY.FIAS.Service.csproj", "{1066442D-7DF2-4976-9E3F-CAE605A424D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YY.FIAS.Service", "Apps\YY.FIAS.Service\YY.FIAS.Service.csproj", "{1066442D-7DF2-4976-9E3F-CAE605A424D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{663C74EA-9ED2-4694-B71B-8FF291784F42}"
 	ProjectSection(SolutionItems) = preProject
@@ -21,9 +21,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{DF17B5D0-0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7227DE98-398D-4716-9B29-97AA4ACFD4A6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YY.FIAS.Loader.Tests", "YY.FIAS.Loader.Tests\YY.FIAS.Loader.Tests.csproj", "{51B028DC-F8A2-44F2-BAC9-3470C79E7356}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YY.FIAS.Loader.Tests", "Tests\YY.FIAS.Loader.Tests\YY.FIAS.Loader.Tests.csproj", "{51B028DC-F8A2-44F2-BAC9-3470C79E7356}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YY.FIAS.ConsoleApp", "YY.FIAS.ConsoleApp\YY.FIAS.ConsoleApp.csproj", "{A28B3A2D-C12A-4B95-850F-5D18C7B8E7E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YY.FIAS.ConsoleApp", "Apps\YY.FIAS.ConsoleApp\YY.FIAS.ConsoleApp.csproj", "{A28B3A2D-C12A-4B95-850F-5D18C7B8E7E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
