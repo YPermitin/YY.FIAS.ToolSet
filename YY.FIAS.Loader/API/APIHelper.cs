@@ -23,13 +23,35 @@ namespace YY.FIAS.Loader.API
 
         public async Task DownloadFile(Uri uriFile, string savePath)
         {
-            var response = await _apiClient.GetAsync(uriFile);
-            response.EnsureSuccessStatusCode();
-            
-            await using var ms = await response.Content.ReadAsStreamAsync();
-                await using var fs = File.Create(savePath);
-                    ms.Seek(0, SeekOrigin.Begin);
-                    await ms.CopyToAsync(fs);
+            using (HttpResponseMessage response = _apiClient.GetAsync(uriFile, HttpCompletionOption.ResponseHeadersRead).Result)
+            {
+                response.EnsureSuccessStatusCode();
+
+                await using (Stream contentStream = await response.Content.ReadAsStreamAsync(), fileStream = new FileStream(savePath, FileMode.Create, FileAccess.Write, FileShare.None, 8192, true))
+                {
+                    var totalRead = 0L;
+                    var totalReads = 0L;
+                    var buffer = new byte[8192];
+                    var isMoreToRead = true;
+
+                    do
+                    {
+                        var read = await contentStream.ReadAsync(buffer, 0, buffer.Length);
+                        if (read == 0)
+                        {
+                            isMoreToRead = false;
+                        }
+                        else
+                        {
+                            await fileStream.WriteAsync(buffer, 0, read);
+
+                            totalRead += read;
+                            totalReads += 1;
+                        }
+                    }
+                    while (isMoreToRead);
+                }
+            }
         }
 
         public async Task<string> GetContentAsString(Uri uri)
