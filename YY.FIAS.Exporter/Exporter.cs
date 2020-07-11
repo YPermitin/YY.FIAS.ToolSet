@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace YY.FIAS.Exporter
+﻿namespace YY.FIAS.Exporter
 {
     public class Exporter
     {

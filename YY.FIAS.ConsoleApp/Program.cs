@@ -19,7 +19,7 @@ namespace YY.FIAS.ConsoleApp
 
         static async Task MainAsync(string[] args)
         {
-            string workDirectory = Path.Combine(Environment.CurrentDirectory, "TestData"); ;
+            string workDirectory = Path.Combine(Environment.CurrentDirectory, "TestData");
             IFIASLoader loader = new FIASLoader();
             DownloadFileInfo lastInfo = await loader.GetLastDownloadFileInfo();
 
